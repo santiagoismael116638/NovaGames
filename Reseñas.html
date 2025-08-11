@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Opiniones Gamer</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0b0b0e; /* negro profundo */
+      color: #dcdfff;
+    }
+
+    header {
+      background: linear-gradient(to right, #3d0075, #1f3f93); /* morado a azul */
+      text-align: center;
+      padding: 30px 20px;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .add-review, .reviews {
+      background-color: #181827;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 20px rgba(60, 0, 120, 0.3);
+    }
+
+    h2 {
+      color: #c099ff;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: #1e1e2f;
+      border: 1px solid #444;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    button {
+  background-color: #3b00b7;
+  color: white;
+  padding: 12px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #2a008a; /* Un tono más oscuro */
+}
+
+    button:hover {
+      background-color: #5600ff;
+    }
+
+    .review-item {
+      border-bottom: 1px solid #333;
+      padding: 15px 0;
+    }
+
+    .review-item h3 {
+      color: #9ab6ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🎮 Opiniones Gamer</h1>
+    <p>Explora reseñas auténticas de gamers como tú</p>
+    <a class="back-link" href="index.html">← Volver al inicio</a>
+  </header>
+
+  <main>
+    <section class="add-review">
+      <h2>📝 Deja tu Reseña</h2>
+      <form id="reviewForm">
+        <input type="text" id="name" placeholder="Tu nombre" required>
+        <input type="text" id="game" placeholder="Nombre del juego" required>
+        <textarea id="opinion" rows="4" placeholder="Tu opinión" required></textarea>
+        <button type="submit">Publicar Reseña</button>
+      </form>
+    </section>
+
+    <section class="reviews">
+      <h2>📢 Reseñas Recientes</h2>
+      <div id="reviewList">
+        <!-- Reseñas precargadas -->
+        <div class="review-item">
+          <h3>Horizon Forbidden West</h3>
+          <p><strong>AnaGamer dice:</strong></p>
+          <p>Una obra de arte visual. La historia es profunda y los combates con máquinas son increíbles.</p>
+        </div>
+
+        <div class="review-item">
+          <h3>Gran Turismo 7</h3>
+          <p><strong>DriftKing93 dice:</strong></p>
+          <p>Física de conducción excelente. Perfecto para los amantes del automovilismo realista.</p>
+        </div>
+
+        <div class="review-item">
+          <h3>Astro Bot (PS5 Pro)</h3>
+          <p><strong>PixelSensei dice:</strong></p>
+          <p>Una carta de amor a PlayStation. Divertido, innovador y visualmente espectacular.</p>
+        </div>
+
+        <div class="review-item">
+          <h3>Forza Horizon 6 (Xbox Series X Refresh)</h3>
+          <p><strong>SpeedFreakX dice:</strong></p>
+          <p>Mapa increíblemente detallado y una sensación de velocidad brutal. El mejor Forza hasta ahora.</p>
+        </div>
+
+        <div class="review-item">
+          <h3>Halo Infinite</h3>
+          <p><strong>SpartanOne dice:</strong></p>
+          <p>Jugabilidad sólida y un regreso a lo clásico. El multijugador sigue siendo adictivo.</p>
+        </div>
+
+        <div class="review-item">
+          <h3>Fable: Reborn</h3>
+          <p><strong>LionheadLegacy dice:</strong></p>
+          <p>Una mezcla mágica de humor, combate y exploración. El reboot que Fable merecía.</p>
+        </div>
+
+        <div class="review-item">
+          <h3>The Legend of Zelda: Echoes of Wisdom</h3>
+          <p><strong>LinkSpirit dice:</strong></p>
+          <p>La nueva mecánica de ecos da un giro fresco al estilo clásico de Zelda. Hermoso y desafiante.</p>
+        </div>
+
+        <div class="review-item">
+          <h3>Mario Galaxy 3</h3>
+          <p><strong>StarChaser dice:</strong></p>
+          <p>Vuelve la magia del espacio con más creatividad y locura que nunca. Joy-Con + gravedad = diversión pura.</p>
+        </div>
+
+        <div class="review-item">
+          <h3>Metroid Beyond</h3>
+          <p><strong>ZeroSuitX dice:</strong></p>
+          <p>Atmosférico y desafiante. Samus vuelve más poderosa que nunca. Switch 2 lo mueve como un sueño.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Opiniones Gamer. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById("reviewForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const game = document.getElementById("game").value;
+      const opinion = document.getElementById("opinion").value;
+
+      const reviewList = document.getElementById("reviewList");
+
+      const reviewItem = document.createElement("div");
+      reviewItem.classList.add("review-item");
+      reviewItem.innerHTML = `
+        <h3>${game}</h3>
+        <p><strong>${name} dice:</strong></p>
+        <p>${opinion}</p>
+      `;
+
+      reviewList.prepend(reviewItem);
+
+      document.getElementById("reviewForm").reset();
+    });
+  </script>
+</body>
+</html>
+
